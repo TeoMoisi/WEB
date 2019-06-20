@@ -1,0 +1,14 @@
+<script>
+  $(document).ready(function () {
+    $(document).click(function () {
+      $.ajax({
+        type: "DELETE",
+        url: "delete.php",
+        data: {id: $(this).attr('id')},
+        success: function (data, status) {
+          $("#maindiv").html(data);
+        }
+      });
+    });
+  });
+</script>

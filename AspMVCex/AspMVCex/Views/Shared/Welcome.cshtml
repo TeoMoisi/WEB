@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <title>Welcome</title>
+</head>
+<body>
+    @{
+        string username = (string) ViewData["username"];
+    }
+    <div class="jumbotron">
+    <hgroup>
+        <h1>Welcome, @username!</h1>
+        <h2>This is your links management system!</h2>
+    </hgroup>
+
+    <form action="/Main/GetLinks" method="get">
+        <input type="submit" value="List all" />
+    </form>
+        </div>
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdateLink</title>
+</head>
+<body>
+    @{
+        string link_url = (string)ViewData["url_link"];
+    }
+    <div>
+        <form action="/Main/UpdateLink" method="GET">
+            URL : <input type="text" id="IDnume" name="url_link" value=@link_url /> <br />
+            Description : <input type="text" id="IDpassword" name="Description" /> <br />
+            Category : <input type="text" id="IDgroup_id" name="Category" /> <br />
+            <input type="submit" value="Update" />
+        </form>
+    </div>
+</body>
+</html>

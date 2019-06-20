@@ -1,0 +1,31 @@
+body {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+}
+
+.gradient{
+  background-image: linear-gradient(rgba(0, 0, 255, 0), rgba(0, 0, 255, 0.5), rgba(0, 0, 255, 1) 40%);
+	height: 20px;
+	position: relative;
+	transition: height 10s linear;
+}
+
+.gradient:hover {
+	height: 100vh;
+	animation: ILikeToMoveIt 10s;
+}
+
+
+@keyframes ILikeToMoveIt{
+	from{ height: 20px; }
+	to{ height: calc(100vh); }
+}
+
+.line{
+  background-color: #87CEEB;
+  height: 20px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}

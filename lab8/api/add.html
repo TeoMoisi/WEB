@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../style/style.css">
+<title>Add Record Form</title>
+</head>
+<body>
+  <br>
+  <div class="wrapper" id="add_form">
+      <h2>Add a new link</h2>
+      <p>Please fill the fields:</p>
+<form action="insert.php" method="post">
+    <p class="form-group">
+        <label for="URL">URL:</label>
+        <input type="text" name="URL" id="URL">
+    </p>
+    <p class="form-group">
+        <label for="desc">Description:</label>
+        <input type="text" name="description" id="desc">
+    </p>
+    <p class="form-group">
+        <label for="category">Category:</label>
+        <input type="text" name="category" id="category">
+    </p>
+    <input type="submit" value="Submit">
+</form>
+</div>
+<br><br>
+<div>
+  <a href="../login/welcome.php" class="btn btn-success">Changed your mind? Go back to the main page</a>
+<div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+﻿@using AspMVCex.Models;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ViewAllLinks</title>
+    <script src="~/Scripts/jquery-2.0.3.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/Content/Site.css">
+    <script>$(document).ready(function () {
+
+            $(".btn-danger").click(function () {
+                $.get("/Main/DeleteLink", { url_link: $(this).attr('id') },
+                    function (data, status) {
+                        $("#maindiv").html(data);
+                    });
+                location.reload();
+            });
+
+
+            $(".btn-success").click(function () {
+                console.log($(this).attr('id'));
+                console.log($("#descr").val());
+                console.log($("#category").val);
+                $.get("/Main/UpdateLink", { url_link: $(this).attr('id'), descr: $("#descr").val(), category: $("#category").val() },
+                    function (data, status) {
+                        $("#maindiv").html(data);
+                    });
+            });
+
+        });</script>
+</head>
+<body>
+    <div class="jumbotron">
+        <h2>
+            These are all your links
+        </h2>
+    </div>
+    <div class="wrapper" id="list_form">
+        @{
+        List<Link> links = (List<Link>)
+            ViewData["links"];
+        }
+
+        <table>
+            <tr>
+                <th>URL</th>
+                <th>description</th>
+                <th>category</th>
+                <th>Delete</th>
+                <th>Update</th>
+            </tr>
+            @foreach (Link link in links)
+        {
+            <tr>
+                <td><input type='text' value=@link.URL></td>
+                <td><input id="descr" type='text' value=@link.description></td>
+                <td><input id="category" type='text' value=@link.category></td>
+                <td>
+                    <button class="btn btn-danger" id=@link.URL>Delete</button>
+                </td>
+                <td>
+                    <button class="btn btn-success" id=@link.URL>Update</button>
+                </td>
+            </tr>
+    }
+        </table>
+    </div>
+
+
+
+    <form action="/Main/AddLinkForm" method="get">
+        <input type="submit" value="Add" />
+    </form>
+
+    <form action="/Main/FilterLinks" method="get">
+        Category: <input type="text" id="category" name="category"/><br />
+        <input type="submit" value="Filter" />
+    </form>
+</body>
+</html>
+

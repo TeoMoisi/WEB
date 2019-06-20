@@ -1,0 +1,17 @@
+﻿body {
+    font: 14px sans-serif;
+    text-align: center;
+}
+
+.wrapper {
+    width: 350px;
+    padding: 20px;
+    background-color: pink !important;
+}
+
+#login_form {
+    background-color: pink;
+    margin: 0 auto;
+    margin-top: 200px;
+    border-radius: 5px;
+}

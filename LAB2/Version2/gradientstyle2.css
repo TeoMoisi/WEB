@@ -1,0 +1,23 @@
+.line{
+    background: #87CEEB;;
+    width: 100%;
+    height: 10px;
+    transition: margin-top 15s;
+    position: absolute;
+}
+
+.gradient {
+    background-image: linear-gradient(darkblue, lightblue);
+    width: 100%;
+    height: 0;
+    transition: height 15s;
+    position: absolute;
+}
+
+.line:hover{
+    margin-top: 790px;
+}
+
+.line:hover ~ .gradient{
+    height: 790px;
+}

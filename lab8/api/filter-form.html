@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="../scripts/jquery-2.1.4.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../style/style.css">
+<script>
+  $(document).ready(function () {
+    $("#filterStudentsButton").click(function () {
+      $.ajax({
+        type: "GET",
+        url: "filter.php",
+        data: {category: $("#category").val(), limit: 2},
+        success: function (data, status) {
+          $("#maindiv").html(data);
+        }
+      });
+    });
+
+    $("#maindiv").on("click", ".clickable", function (event) {
+      console.log("test");
+      $.ajax({
+       type: "GET",
+        url: "filter.php",
+        data: {category: $("#category").val(), pageno: $(this).attr("param"), limit: 2},
+        success: function (data, status) {
+          $("#maindiv").html(data);
+        }
+      });
+    });
+
+    $("#maindiv").on("click", ".prev", function (event) {
+      console.log("test");
+      $.ajax({
+       type: "GET",
+        url: "filter.php",
+        data: {category: $("#category").val(), pageno: $(this).attr("param"), limit: 2},
+        success: function (data, status) {
+          $("#maindiv").html(data);
+        }
+      });
+    });
+
+    $("#maindiv").on("click", ".next", function (event) {
+      console.log("test");
+      $.ajax({
+       type: "GET",
+        url: "filter.php",
+        data: {category: $("#category").val(), pageno: $(this).attr("param"), limit: 2},
+        success: function (data, status) {
+          $("#maindiv").html(data);
+        }
+      });
+    });
+
+
+    $("#maindiv").on("click", ".last", function (event) {
+      console.log("test");
+      $.ajax({
+       type: "GET",
+        url: "filter.php",
+        data: {category: $("#category").val(), pageno: $(this).attr("param"), limit: 2},
+        success: function (data, status) {
+          $("#maindiv").html(data);
+        }
+      });
+    });
+  });
+</script>
+
+
+<title>Filter Form</title>
+</head>
+<body>
+<!-- <form action="filter.php" method="post"> -->
+  <div id="maindiv"></div>
+    <p class="wrapper" id="filter-form">
+        <label for="category">Category:</label>
+        <input type="text" name="category" id="category">
+        <input id="filterStudentsButton" type="button" value="Filter">
+
+    </p>
+
+    <br><br>
+    <div>
+      <a href="../login/welcome.php" class="btn btn-primary">Changed your mind? Go back to the main page</a>
+    </div>
+
+<!-- </form> -->
+
+</body>
+</html>

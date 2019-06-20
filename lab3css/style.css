@@ -1,0 +1,303 @@
+body{
+  margin: 0px auto;
+  padding: 0px;
+  background-color : white;
+  height: 100%;
+  position: relative;
+}
+
+.first_nav {
+  width: 100%;
+  height: 23px;
+  background-color: #2d1152;
+  position: -webkit-sticky;
+}
+
+/* .home_img {
+  align: left;
+  width: 20px;
+  height: 17px;
+} */
+
+.second_nav {
+  width: 100%;
+  height: 90px;
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.third_nav {
+  width: 100%;
+  height: 40px;
+  background-color: white;
+
+}
+
+.third_nav li a {
+  font-size: 14px;
+  color: #4d00ae;
+  margin-right: 30px;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /* margin-right: 5px; */
+
+}
+
+.first_nav li a {
+    margin-right: 20px;
+    padding: 2px 3px;
+}
+
+li {
+  float: left;
+}
+
+li a{
+  display: block;
+  float: left;
+  color: white;
+  /* margin-right: 25px; */
+  text-decoration: none;
+  font-size: 13px;
+  padding: 2px 3px;
+  /* padding: 2px 3px; */
+}
+
+li a:hover {
+  text-decoration: underline;
+}
+
+.yahoo_img {
+  height: 55px;
+  /* width: 210px; */
+  width: 40%
+  margin-top: 10%;
+  /* margin-right: 20px; */
+  margin-left: 25%;
+}
+
+input {
+  height: 43px;
+  width: 300%;
+  border: 1px solid #1E90FF;
+  margin-top: 17px;
+  margin-left: 50%;
+}
+
+.search_img {
+  height: 47px;
+  width: 60%;
+  margin-top: 17px;
+  margin-left: 150% !important;
+  /* margin-right: 200px; */
+}
+
+.sign_in {
+  border: 2px solid #430297;
+  height: 25px;
+  width: 120%;
+  border-radius: 2px;
+  margin-top: 28px;
+  font-weight: bold;
+  font-size: 13px;
+  color: #430297;
+  margin-left: 450%;
+  cursor: pointer;
+}
+
+.mail_img {
+  height: 20px;
+  width: 50%;
+  margin-top: 29px;
+  margin-right: 2px;
+  margin-left: 230%;
+}
+
+
+.mail2_img {
+  height: 20px;
+  width: 25%;
+  margin-left: 80px;
+  /* margin-right: 1px !important; */
+}
+
+
+.eng_img {
+  margin-left: 550px;
+  height: 17px;
+  width: 22px;
+
+}
+
+.click_here {
+  padding-top: 10px;
+  display: table;
+  margin-left: 80px;
+}
+
+.blue_line {
+  height: 75px;
+  width: 1100px;
+  background-color: #1E90FF;
+  border-radius: 2px 0px 0px 2px;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+p {
+  color: white;
+  font-size: 18px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  margin-left: 30px;
+  font-weight: 600;
+}
+
+.adv1 {
+  height: 75px;
+  width: 150px;
+}
+
+.line {
+  width: 10px; /* Line width */
+  background-color: red; /* Line color */
+  height: 100%;
+}
+
+.right_div {
+  width: 21%;
+  float: right;
+  margin-right: 7.5%;
+  /* margin-left: 71.5%; */
+
+}
+
+.weather {
+  height: 120px;
+  margin-top: 45px;
+}
+
+.colours {
+  margin-top: 50px;
+  height: 500px;
+  width: 100%;
+}
+
+.gradient_btn {
+  color: white;
+  background-image: linear-gradient(81deg,#7c00bb,#6b03f6 49%,#4d35f4);
+  border-radius: 6px;
+  font: 16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  height: 7vh;
+  margin-top: 2vh;
+  width: 100%;
+}
+
+.finance {
+  margin-top: 35px;
+  width: 75%;
+  width: 100%;
+}
+
+.left_div {
+  margin-left: 25%;
+  width: 60%;
+  margin-top: 50px;
+  margin-right: 10%;
+}
+
+table {
+  border-spacing: 2px;
+  margin-top: 20px;
+}
+.cell {
+  margin-top: 20px;
+  width: 50%;
+  height: 90px;
+  padding-right: 0px;
+}
+
+.cont {
+  font: 13px/1.3 "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: left;
+}
+
+.inner_text {
+  font-size: 10px;
+  font: 13px/1.3 "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.check_it {
+  height: 70px;
+  width: 50%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 20px;
+}
+
+.picant {
+  width: 60%;
+  height: 30%;
+  margin-left: 5%;
+  margin-top: 10px;
+}
+
+
+@media (max-width: 1400px) {
+  .eng_img {
+    display: none;
+    margin-right: 0;
+  }
+
+  .third_nav li a {
+    margin-right: 0px !important;
+  }
+
+  .sign_in, .mail_img {
+    margin-right: 0px !important;
+  }
+
+
+
+  .adv1 {
+    display: none;
+  }
+
+}
+
+@media (max-width: 1000px) {
+  .search_img, .sign_in, .mail_img {
+    display: none;
+  }
+
+
+  .yahoo_img {
+    height: 40px;
+    width: 150px;
+    margin-left: 0;
+    left: 0;
+    padding-left: 0;
+  }
+
+  input {
+    height: 43px;
+    width: 300px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .blue_line {
+    width: 90%;
+  }
+
+
+}

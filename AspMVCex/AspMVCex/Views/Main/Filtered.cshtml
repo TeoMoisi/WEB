@@ -1,0 +1,94 @@
+﻿@using AspMVCex.Models;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ViewAllLinks</title>
+    <script src="~/Scripts/jquery-2.0.3.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/Content/Site.css">
+    <script>
+
+    @*$(document).ready(function () {
+            $("#next").click(function () {
+                $("#curent")
+                $.get("/Main/GetStudentsFromGroup", { group_id: $("#group_id").val() },
+                    function (data, status) {
+                        $("#maindiv").html(data);
+                    });
+            });
+        });*@
+        function handleNext() {
+
+            var current = document.getElementById('current');
+            console.log(current);
+            var current_page = parseInt(current.value) + 1;
+            current.setAttribute("value", current_page);
+
+        }
+
+        function handlePrev() {
+
+            var current = document.getElementById('current');
+
+            var current_page = parseInt(current.value) - 1;
+            if (current_page == 0) {
+                alert("There is no page 0!");
+            } else {
+                current.setAttribute("value", current_page);
+            }
+
+        }</script>
+</head>
+<body>
+
+    <form action="/Main/FilterLinks" method="GET">
+
+    <div>
+        @{
+            string category = (string)ViewData["category"];
+
+            int current_page;
+            if (ViewData["current_page"] == null) {
+                current_page = 1;
+            } else {
+                current_page = (int)ViewData["current_page"];
+            }
+            List<Link> links = (List<Link>)
+                ViewData["links"];
+        }
+        <h2>These are all your links with the desired category:
+            <input id="category" name="category" type='text' value=@category> </h2>
+             </div>
+    <div class="wrapper" id="list_form">
+        <table>
+
+            <tr>
+                <th>URL</th>
+                <th>description</th>
+                <th>category</th>
+            </tr>
+            @foreach (Link link in links)
+        {
+            <tr>
+                <td><input type='text' value=@link.URL></td>
+                <td><input id="descr" type='text' value=@link.description></td>
+                <td><input id="category" type='text' value=@link.category></td>
+            </tr>
+    }
+        </table>
+    </div>
+
+    <input id="prev" type='submit' name='prev' onclick='handlePrev()' value='PREV'>
+    <input type='text' id='current' name='current_page' value=@current_page>
+    <input id="next" type='submit' name='next' onclick='handleNext()' value='NEXT'>
+
+
+  </form>
+</body>
+</html>
+

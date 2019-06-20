@@ -1,0 +1,29 @@
+li a {
+  float: left;
+  padding: 2px 3px;
+}
+
+ul {
+  position: relative;
+  list-style-type: none;
+}
+body{
+  margin: 0px auto;
+  padding: 0px;
+  background-color : white;
+  height: 100%;
+  position: relative;
+  /* width: 1000px; */
+}
+
+.thumb {
+  width: 200px;
+  height: 250px;
+}
+
+#big_img {
+  width: 400px;
+  height: 270px;
+  margin-left: 200px;
+  margin-top: 30px;
+}
